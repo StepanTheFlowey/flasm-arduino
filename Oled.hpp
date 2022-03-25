@@ -67,6 +67,26 @@ public:
 
   void end();
 
+  inline void clear(bool color = false) {
+    memset(buffer_, color ? 255 : 0, 1024);
+  }
+
+  void drawPixel(const uint8_t x, const uint8_t y, const bool color);
+
+  void drawLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, const bool color);
+
+  void drawRect(const uint8_t x0, const uint8_t y0, const uint8_t x1, const uint8_t y1, const bool color);
+
+  void drawFillRect(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, const bool color);
+
+  void drawPlotPoints(const uint8_t x0, const uint8_t y0, const uint8_t x1, const uint8_t y1, const bool color);
+
+  void drawCircle(const uint8_t x, const uint8_t y, const uint8_t radius, const bool color);
+
+  void drawPlotLines(const uint8_t x0, const uint8_t y0, const uint8_t x1, const uint8_t y1, const bool color);
+
+  void drawFillCircle(const uint8_t x, const uint8_t y, const uint8_t radius, const bool color);
+
   virtual void sendSingle(const uint8_t command);
 
   virtual void sendSequence(const uint8_t* sequence, const uint8_t lenght);

@@ -13,4 +13,12 @@ public:
   ~TftSpi() {
     debug(F("~TftSpi"));
   }
+
+  void begin() {
+
+  }
+
+  void end() {
+
+  }
 };
